@@ -1,5 +1,48 @@
 # Changelog
 
+## 0.21.0
+
+- Fix UUID as serializers.PrimaryRelatedField not correctly serialized so don't need pk_field=serializers.UUIDField(format="hex_verbose") anymore to work
+- Add Possibility to launch a secure gRPC server (https://django-socio-grpc.readthedocs.io/en/stable/how-to/work-with-secure-port.html)
+- Add support of Serializer as child argument of a serializer.listField
+- Fix and improve the way we handle using default values in gRPC (link doc)
+- Enable to use the correct generator syntax in test with FakeFullAIOGRPC for stream request
+
+## 0.20.3
+
+- Doc review
+
+## 0.20.3
+
+- Add new documentation
+
+## 0.20.2
+
+- change python dependance from python = ">=3.8,<4.0" to python = ">=3.8"
+
+## 0.20.1
+
+- Improve error handling system
+    - Support of handling rest_framework.APIException in gRPC abort logic
+    - Adapt logging level to exception class and let this overridable
+
+- Deprecate grpc_settings.LOG_EXTRA_CONTEXT_FUNCTION and Service.get_log_extra_context
+
+## 0.20.0
+
+- Rework logging to use more django like system (https://django-socio-grpc.readthedocs.io/en/stable/features/logging.html):
+    - Add django_socio_grpc.request, django_socio_grpc.services, django_socio_grpc.internal, django_socio_grpc.generation, django_socio_grpc.registration) logger
+    - Affine exception usage
+    - Remove GRPCHandler class
+
+## 0.19.6
+
+- Fix 0.19.5
+
+## 0.19.5
+
+- Add some methods to InternalHttpRequest to enable oauth library
+
 ## 0.19.4
 
 - Add support for serializer adata
